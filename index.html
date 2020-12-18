@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 16px;
+        }
+
+        .selected_shops {
+            border: 1px solid black;
+        }
+
+        .shops {
+            border: 1px solid black;
+        }
+
+        .selected_shop {
+            text-align: left;
+            background-color: aquamarine;
+            margin: 10px;
+            padding: 10px;
+            display: none;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .selected_shop.selected {
+            display: flex; /** as block **/
+        }
+
+        .shop {
+            text-align: left;
+            background-color: darkgrey;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid black;
+        }
+
+        .shop.selected {
+            /* border: 1px solid red; */
+            display: none;
+        }
+
+        .area_burnaby_along_hasting {
+            background-color: #cfccff;
+        }
+
+        .area_burnaby_along_e_broadway {
+            background-color: #ccf1ff;
+        }
+
+        .area_west_coquitlam {
+            background-color: #d9ffcc;
+        }
+
+        .area_coquitlam_north {
+            background-color: #f39761;
+        }
+
+        .area_coquitlam_west {
+            background-color: #ffcccc;
+        }
+
+        .area_pittmeadows {
+            background-color: #eeffcc;
+        }
+
+        .area_maple_ridge {
+            background-color: #ce7fab;
+        }
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="selected_shops">
+            <h2>SELECTED SHOPS</h2>
+            <h3 id='selectedCount'>Shop count: 0</h3>
+            <div id='selectedShop01' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('01')"><span>1, Koko Japanese Restaurant</span></div>
+            <div id='selectedShop02' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('02')"><span>2, Tentatsu Vancouver</span></div>
+            <div id='selectedShop03' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('03')"><span>3, Hoshi Sushi</span></div>
+            <div id='selectedShop04' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('04')"><span>4, Blow fish (after 11:20)</span></div>
+            <div id='selectedShop05' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('05')"><span>5, Motonobu Udon</span></div>
+            <div id='selectedShop06' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('06')"><span>6, Hiro Sushi (after 10:50)</span></div>
+            <div id='selectedShop07' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('07')"><span>7, Tentatsu Burnaby (before 1:00)</span></div>
+            <div id='selectedShop08' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('08')"><span>8, Kazu Japanese Restaurant</span></div>
+            <div id='selectedShop09' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('09')"><span>9, Sushi Town Burnaby</span></div>
+            <div id='selectedShop10' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('10')"><span>10, Hong Sushi</span></div>
+            <div id='selectedShop11' class="selected_shop area_burnaby_along_hasting" onclick="unselectShop('11')"><span>11, Toyo Sushi (after 2:30)</span></div>
+            <div id='selectedShop12' class="selected_shop area_burnaby_along_e_broadway" onclick="unselectShop('12')"><span>12, Riz Sushi</span></div>
+            <div id='selectedShop13' class="selected_shop area_burnaby_along_e_broadway" onclick="unselectShop('13')"><span>13, Sushimoto</span></div>
+            <div id='selectedShop14' class="selected_shop area_west_coquitlam" onclick="unselectShop('14')"><span>14, Steve’s Poke Bar SFU</span></div>
+            <div id='selectedShop15' class="selected_shop area_west_coquitlam" onclick="unselectShop('15')"><span>15, Katsuya</span></div>
+            <div id='selectedShop16' class="selected_shop area_west_coquitlam" onclick="unselectShop('16')"><span>16, Hanano Sushi & Grill</span></div>
+            <div id='selectedShop17' class="selected_shop area_west_coquitlam" onclick="unselectShop('17')"><span>17, Okoman Restaurant</span></div>
+            <div id='selectedShop18' class="selected_shop area_west_coquitlam" onclick="unselectShop('18')"><span>18, Boil it world</span></div>
+            <div id='selectedShop19' class="selected_shop area_west_coquitlam" onclick="unselectShop('19')"><span>19, Green Leaf Cafe</span></div>
+            <div id='selectedShop20' class="selected_shop area_west_coquitlam" onclick="unselectShop('20')"><span>20, Steve’s Poke Bar Lougheed (need to call 604-423-3474)</span></div>
+            <div id='selectedShop21' class="selected_shop area_west_coquitlam" onclick="unselectShop('21')"><span>21, Sushi California</span></div>
+            <div id='selectedShop22' class="selected_shop area_west_coquitlam" onclick="unselectShop('22')"><span>22, Kokoro Tokyo Mazesoba</span></div>
+            <div id='selectedShop23' class="selected_shop area_west_coquitlam" onclick="unselectShop('23')"><span>23, Yoko Sushi</span></div>
+            <div id='selectedShop24' class="selected_shop area_west_coquitlam" onclick="unselectShop('24')"><span>24, Mika Sushi</span></div>
+            <div id='selectedShop25' class="selected_shop area_west_coquitlam" onclick="unselectShop('25')"><span>25, Sushia sushi</span></div>
+            <div id='selectedShop26' class="selected_shop area_coquitlam_north" onclick="unselectShop('26')"><span>26, Sakaya Sushi</span></div>
+            <div id='selectedShop27' class="selected_shop area_coquitlam_north" onclick="unselectShop('27')"><span>27, Matsuzushi</span></div>
+            <div id='selectedShop28' class="selected_shop area_coquitlam_north" onclick="unselectShop('28')"><span>28, Hanayuki Sushi</span></div>
+            <div id='selectedShop29' class="selected_shop area_coquitlam_north" onclick="unselectShop('29')"><span>29, Sango Sushi (Goen) (after 2:00)</span></div>
+            <div id='selectedShop30' class="selected_shop area_coquitlam_north" onclick="unselectShop('30')"><span>30, Kaiko sushi & japanese restaurant</span></div>
+            <div id='selectedShop31' class="selected_shop area_coquitlam_north" onclick="unselectShop('31')"><span>31, Sushi Town in Coquitlam</span></div>
+            <div id='selectedShop32' class="selected_shop area_coquitlam_north" onclick="unselectShop('32')"><span>32, Nagano Japanese Restaurant</span></div>
+            <div id='selectedShop33' class="selected_shop area_coquitlam_north" onclick="unselectShop('33')"><span>33, Sashimi Sushi</span></div>
+            <div id='selectedShop34' class="selected_shop area_coquitlam_north" onclick="unselectShop('34')"><span>34, Poke & Co</span></div>
+            <div id='selectedShop35' class="selected_shop area_coquitlam_north" onclick="unselectShop('35')"><span>35, Steve’s Poke Bar Henderson Mall (next to Shobu ramen)</span></div>
+            <div id='selectedShop36' class="selected_shop area_coquitlam_north" onclick="unselectShop('36')"><span>36, Shobu ramen</span></div>
+            <div id='selectedShop37' class="selected_shop area_coquitlam_north" onclick="unselectShop('37')"><span>37, Save On Foods Coq</span></div>
+            <div id='selectedShop38' class="selected_shop area_coquitlam_north" onclick="unselectShop('38')"><span>38, Ramen Bella</span></div>
+            <div id='selectedShop39' class="selected_shop area_coquitlam_north" onclick="unselectShop('39')"><span>39, Hiraku Sushi (before 12pm Thursday )</span></div>
+            <div id='selectedShop40' class="selected_shop area_coquitlam_west" onclick="unselectShop('40')"><span>40, Kisso Sushi</span></div>
+            <div id='selectedShop41' class="selected_shop area_coquitlam_west" onclick="unselectShop('41')"><span>41, Sushi On</span></div>
+            <div id='selectedShop42' class="selected_shop area_coquitlam_west" onclick="unselectShop('42')"><span>42, Sushi Fu</span></div>
+            <div id='selectedShop43' class="selected_shop area_coquitlam_west" onclick="unselectShop('43')"><span>43, Hiro Sushi</span></div>
+            <div id='selectedShop44' class="selected_shop area_coquitlam_west" onclick="unselectShop('44')"><span>44, Sushi Bar Shyun (call before 20 min)</span></div>
+            <div id='selectedShop45' class="selected_shop area_coquitlam_west" onclick="unselectShop('45')"><span>45, Sushi 990</span></div>
+            <div id='selectedShop46' class="selected_shop area_coquitlam_west" onclick="unselectShop('46')"><span>46, Poco sushi (2325 Ottawa St.)</span></div>
+            <div id='selectedShop47' class="selected_shop area_coquitlam_west" onclick="unselectShop('47')"><span>47, 1648 Langan Avenue</span></div>
+            <div id='selectedShop48' class="selected_shop area_coquitlam_west" onclick="unselectShop('48')"><span>48, Sysco Vancouver</span></div>
+            <div id='selectedShop49' class="selected_shop area_pittmeadows" onclick="unselectShop('49')"><span>49, Kisoji Japanese Kitchen</span></div>
+            <div id='selectedShop50' class="selected_shop area_pittmeadows" onclick="unselectShop('50')"><span>50, Save On Food Pitt meadows</span></div>
+            <div id='selectedShop51' class="selected_shop area_pittmeadows" onclick="unselectShop('51')"><span>51, Sango (1188054 BC Ltd)</span></div>
+            <div id='selectedShop52' class="selected_shop area_pittmeadows" onclick="unselectShop('52')"><span>52, Sushi Umibe</span></div>
+            <div id='selectedShop53' class="selected_shop area_pittmeadows" onclick="unselectShop('53')"><span>53, Kuroneko Japanese Bistro (before 2:00)</span></div>
+            <div id='selectedShop54' class="selected_shop area_maple_ridge" onclick="unselectShop('54')"><span>54, Grind + Filter Cafe</span></div>
+            <div id='selectedShop55' class="selected_shop area_maple_ridge" onclick="unselectShop('55')"><span>55, Aburiya Sushi</span></div>
+        </div>
+        <div class="shops">
+            <h2>SHOPS</h2>
+            <div id='shop01' class="shop area_burnaby_along_hasting" onclick="selectShop('01')"><span>1, Koko Japanese Restaurant</span></div>
+            <div id='shop02' class="shop area_burnaby_along_hasting" onclick="selectShop('02')"><span>2, Tentatsu Vancouver</span></div>
+            <div id='shop03' class="shop area_burnaby_along_hasting" onclick="selectShop('03')"><span>3, Hoshi Sushi</span></div>
+            <div id='shop04' class="shop area_burnaby_along_hasting" onclick="selectShop('04')"><span>4, Blow fish (after 11:20)</span></div>
+            <div id='shop05' class="shop area_burnaby_along_hasting" onclick="selectShop('05')"><span>5, Motonobu Udon</span></div>
+            <div id='shop06' class="shop area_burnaby_along_hasting" onclick="selectShop('06')"><span>6, Hiro Sushi (after 10:50)</span></div>
+            <div id='shop07' class="shop area_burnaby_along_hasting" onclick="selectShop('07')"><span>7, Tentatsu Burnaby (before 1:00)</span></div>
+            <div id='shop08' class="shop area_burnaby_along_hasting" onclick="selectShop('08')"><span>8, Kazu Japanese Restaurant</span></div>
+            <div id='shop09' class="shop area_burnaby_along_hasting" onclick="selectShop('09')"><span>9, Sushi Town Burnaby</span></div>
+            <div id='shop10' class="shop area_burnaby_along_hasting" onclick="selectShop('10')"><span>10, Hong Sushi</span></div>
+            <div id='shop11' class="shop area_burnaby_along_hasting" onclick="selectShop('11')"><span>11, Toyo Sushi (after 2:30)</span></div>
+            <div id='shop12' class="shop area_burnaby_along_e_broadway" onclick="selectShop('12')"><span>12, Riz Sushi</span></div>
+            <div id='shop13' class="shop area_burnaby_along_e_broadway" onclick="selectShop('13')"><span>13, Sushimoto</span></div>
+            <div id='shop14' class="shop area_west_coquitlam" onclick="selectShop('14')"><span>14, Steve’s Poke Bar SFU</span></div>
+            <div id='shop15' class="shop area_west_coquitlam" onclick="selectShop('15')"><span>15, Katsuya</span></div>
+            <div id='shop16' class="shop area_west_coquitlam" onclick="selectShop('16')"><span>16, Hanano Sushi & Grill</span></div>
+            <div id='shop17' class="shop area_west_coquitlam" onclick="selectShop('17')"><span>17, Okoman Restaurant</span></div>
+            <div id='shop18' class="shop area_west_coquitlam" onclick="selectShop('18')"><span>18, Boil it world</span></div>
+            <div id='shop19' class="shop area_west_coquitlam" onclick="selectShop('19')"><span>19, Green Leaf Cafe</span></div>
+            <div id='shop20' class="shop area_west_coquitlam" onclick="selectShop('20')"><span>20, Steve’s Poke Bar Lougheed (need to call 604-423-3474)</span></div>
+            <div id='shop21' class="shop area_west_coquitlam" onclick="selectShop('21')"><span>21, Sushi California</span></div>
+            <div id='shop22' class="shop area_west_coquitlam" onclick="selectShop('22')"><span>22, Kokoro Tokyo Mazesoba</span></div>
+            <div id='shop23' class="shop area_west_coquitlam" onclick="selectShop('23')"><span>23, Yoko Sushi</span></div>
+            <div id='shop24' class="shop area_west_coquitlam" onclick="selectShop('24')"><span>24, Mika Sushi</span></div>
+            <div id='shop25' class="shop area_west_coquitlam" onclick="selectShop('25')"><span>25, Sushia sushi</span></div>
+            <div id='shop26' class="shop area_coquitlam_north" onclick="selectShop('26')"><span>26, Sakaya Sushi</span></div>
+            <div id='shop27' class="shop area_coquitlam_north" onclick="selectShop('27')"><span>27, Matsuzushi</span></div>
+            <div id='shop28' class="shop area_coquitlam_north" onclick="selectShop('28')"><span>28, Hanayuki Sushi</span></div>
+            <div id='shop29' class="shop area_coquitlam_north" onclick="selectShop('29')"><span>29, Sango Sushi (Goen) (after 2:00)</span></div>
+            <div id='shop30' class="shop area_coquitlam_north" onclick="selectShop('30')"><span>30, Kaiko sushi & japanese restaurant</span></div>
+            <div id='shop31' class="shop area_coquitlam_north" onclick="selectShop('31')"><span>31, Sushi Town in Coquitlam</span></div>
+            <div id='shop32' class="shop area_coquitlam_north" onclick="selectShop('32')"><span>32, Nagano Japanese Restaurant</span></div>
+            <div id='shop33' class="shop area_coquitlam_north" onclick="selectShop('33')"><span>33, Sashimi Sushi</span></div>
+            <div id='shop34' class="shop area_coquitlam_north" onclick="selectShop('34')"><span>34, Poke & Co</span></div>
+            <div id='shop35' class="shop area_coquitlam_north" onclick="selectShop('35')"><span>35, Steve’s Poke Bar Henderson Mall (next to Shobu ramen)</span></div>
+            <div id='shop36' class="shop area_coquitlam_north" onclick="selectShop('36')"><span>36, Shobu ramen</span></div>
+            <div id='shop37' class="shop area_coquitlam_north" onclick="selectShop('37')"><span>37, Save On Foods Coq</span></div>
+            <div id='shop38' class="shop area_coquitlam_north" onclick="selectShop('38')"><span>38, Ramen Bella</span></div>
+            <div id='shop39' class="shop area_coquitlam_north" onclick="selectShop('39')"><span>39, Hiraku Sushi (before 12pm Thursday )</span></div>
+            <div id='shop40' class="shop area_coquitlam_west" onclick="selectShop('40')"><span>40, Kisso Sushi</span></div>
+            <div id='shop41' class="shop area_coquitlam_west" onclick="selectShop('41')"><span>41, Sushi On</span></div>
+            <div id='shop42' class="shop area_coquitlam_west" onclick="selectShop('42')"><span>42, Sushi Fu</span></div>
+            <div id='shop43' class="shop area_coquitlam_west" onclick="selectShop('43')"><span>43, Hiro Sushi</span></div>
+            <div id='shop44' class="shop area_coquitlam_west" onclick="selectShop('44')"><span>44, Sushi Bar Shyun (call before 20 min)</span></div>
+            <div id='shop45' class="shop area_coquitlam_west" onclick="selectShop('45')"><span>45, Sushi 990</span></div>
+            <div id='shop46' class="shop area_coquitlam_west" onclick="selectShop('46')"><span>46, Poco sushi (2325 Ottawa St.)</span></div>
+            <div id='shop47' class="shop area_coquitlam_west" onclick="selectShop('47')"><span>47, 1648 Langan Avenue</span></div>
+            <div id='shop48' class="shop area_coquitlam_west" onclick="selectShop('48')"><span>48, Sysco Vancouver</span></div>
+            <div id='shop49' class="shop area_pittmeadows" onclick="selectShop('49')"><span>49, Kisoji Japanese Kitchen</span></div>
+            <div id='shop50' class="shop area_pittmeadows" onclick="selectShop('50')"><span>50, Save On Food Pitt meadows</span></div>
+            <div id='shop51' class="shop area_pittmeadows" onclick="selectShop('51')"><span>51, Sango (1188054 BC Ltd)</span></div>
+            <div id='shop52' class="shop area_pittmeadows" onclick="selectShop('52')"><span>52, Sushi Umibe</span></div>
+            <div id='shop53' class="shop area_pittmeadows" onclick="selectShop('53')"><span>53, Kuroneko Japanese Bistro (before 2:00)</span></div>
+            <div id='shop54' class="shop area_maple_ridge" onclick="selectShop('54')"><span>54, Grind + Filter Cafe</span></div>
+            <div id='shop55' class="shop area_maple_ridge" onclick="selectShop('55')"><span>55, Aburiya Sushi</span></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script>
+
+        const count = () => {
+            console.log(document.querySelectorAll('.selected_shop.selected').length);
+            document.getElementById('selectedCount').innerHTML = 'Shop count: ' + document.querySelectorAll('.selected_shop.selected').length;
+        }
+
+        const selectShop = (shopId) => {
+            console.log('select : ', shopId);
+            eval("document.getElementById('shop" + shopId + "').classList.add('selected');");
+            eval("document.getElementById('selectedShop" + shopId + "').classList.add('selected');");
+            count();
+        }
+
+        const unselectShop = (shopId) => {
+            console.log('unselect : ', shopId);
+            eval("document.getElementById('shop" + shopId + "').classList.remove('selected');");
+            eval("document.getElementById('selectedShop" + shopId + "').classList.remove('selected');");
+            count();
+        }
+    </script>
+</body>
+</html>
